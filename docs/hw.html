@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>强化学习数学基础 · GOW 战队</title>
+<title>硬件的学习笔记 · GOW 战队</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
@@ -524,8 +524,17 @@ a:hover{text-decoration:underline}
   </article>
 </main>
 <footer class="foot">山西农大 GOW 战队 · 知识文档
-<div class="visits">本站访问 <span id="busuanzi_value_site_pv">–</span> 次 · 访客 <span id="busuanzi_value_site_uv">–</span> 人<span class="sep">|</span>本页阅读 <span id="busuanzi_value_page_pv">–</span> 次</div>
+<div class="visits" data-key="hardware">本站访问 <span id="pv-site">–</span> 次 · 本页阅读 <span id="pv-page">–</span> 次</div>
 </footer>
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script>
+(function(){
+  var box=document.querySelector('.visits'); if(!box) return;
+  var ns='yyyholic-gow/', key=box.getAttribute('data-key'), base='https://abacus.jasoncameron.dev/hit/'+ns;
+  function set(id,v){ var el=document.getElementById(id); if(el) el.textContent=v; }
+  function hit(k,id){ fetch(base+k,{mode:'cors'}).then(function(r){return r.json()})
+      .then(function(d){ set(id,d.value); }).catch(function(){ set(id,'暂无'); }); }
+  hit('site','pv-site'); if(key) hit(key,'pv-page');
+})();
+</script>
 </body>
 </html>
